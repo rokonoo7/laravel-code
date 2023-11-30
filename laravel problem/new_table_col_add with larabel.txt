@@ -1,0 +1,23 @@
+1.step:compand_promp->php artisan make:migration add_active(table name that I want to make)_field_to_categories(table name)
+
+2.step:migration->new-add-korefile asbe seta click.
+
+3.  */
+    public function up()
+    {
+        Schema::table('categories', function (Blueprint $table) {
+            $table->string('is_active(col name)')->nullable()->after('name');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('categories', function (Blueprint $table) {
+            $table->dropColumn('is_active');
+        });
+    }
